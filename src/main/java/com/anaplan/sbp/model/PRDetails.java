@@ -1,165 +1,158 @@
 package com.anaplan.sbp.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 @Entity
 @Table(name = "SYSTEM.INP_PR_Details")
-public class PRDetails implements Serializable{
+public class PRDetails implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue
-	@Column(name = "REQUEST_PR_ID")
-	private long requestPRId;
-	
-	@Column(name = "REQUEST_ID")
-	private String requestId;
-	
-	@Column(name = "PR_DATE")
-	private Date pRDate;
-	
-	@Column(name = "EAM_PR_Status")
-	private String eAMPRStatus;
-	  
-	@Column(name = "AMOUNT")
-	private int amount;
-	
-	  @Column(name = "EAM_GENERAL_DESCRIPTION")
-	private String eAMGnlDesc;
-	
-	@Column(name = "EAM_DEPARTMENT")
-	private String eAMDepartment;
-	
-	@Column(name = "PR_INITIATOR")
-	private String pRInitiator;
-	
-	@Column(name = "PO_AMOUNT")
-	private int pOAmount;
-	
-	
-	@Column(name = "PO_Date")
-	private Date PODate;
-	
-	@Column(name = "EAM_PO_STATUS")
-	private String eAMPOStatus;
-	                
-	@Column(name = "RESERVED_AMOUNT")
-	private int reservedAmount;
-	  
-	@Column(name = "COMMITTED_AMOUNT")
-	private int committedAmount;
+    private static final long serialVersionUID = 1L;
 
-	public long getRequestPRId() {
-		return requestPRId;
-	}
+    @Id
+    @GeneratedValue
+    @Column(name = "REQUEST_PR_ID")
+    private long requestPRId;
 
-	public void setRequestPRId(long requestPRId) {
-		this.requestPRId = requestPRId;
-	}
+    @Column(name = "REQUEST_ID")
+    private String requestId;
 
-	public String getRequestId() {
-		return requestId;
-	}
+    @Column(name = "PR_DATE")
+    private Date pRDate;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    @Column(name = "EAM_PR_Status")
+    private String eAMPRStatus;
 
-	public Date getpRDate() {
-		return pRDate;
-	}
+    @Column(name = "AMOUNT")
+    private int amount;
 
-	public void setpRDate(Date pRDate) {
-		this.pRDate = pRDate;
-	}
+    @Column(name = "EAM_GENERAL_DESCRIPTION")
+    private String eAMGnlDesc;
 
-	public String geteAMPRStatus() {
-		return eAMPRStatus;
-	}
+    @Column(name = "EAM_DEPARTMENT")
+    private String eAMDepartment;
 
-	public void seteAMPRStatus(String eAMPRStatus) {
-		this.eAMPRStatus = eAMPRStatus;
-	}
+    @Column(name = "PR_INITIATOR")
+    private String pRInitiator;
 
-	public int getAmount() {
-		return amount;
-	}
+    @Column(name = "PO_AMOUNT")
+    private int pOAmount;
 
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
+    @Column(name = "PO_Date")
+    private Date PODate;
 
-	public String geteAMGnlDesc() {
-		return eAMGnlDesc;
-	}
+    @Column(name = "EAM_PO_STATUS")
+    private String eAMPOStatus;
 
-	public void seteAMGnlDesc(String eAMGnlDesc) {
-		this.eAMGnlDesc = eAMGnlDesc;
-	}
+    @Column(name = "RESERVED_AMOUNT")
+    private int reservedAmount;
 
-	public String geteAMDepartment() {
-		return eAMDepartment;
-	}
+    @Column(name = "COMMITTED_AMOUNT")
+    private int committedAmount;
 
-	public void seteAMDepartment(String eAMDepartment) {
-		this.eAMDepartment = eAMDepartment;
-	}
+    public long getRequestPRId() {
+        return requestPRId;
+    }
 
-	public String getpRInitiator() {
-		return pRInitiator;
-	}
+    public void setRequestPRId(final long requestPRId) {
+        this.requestPRId = requestPRId;
+    }
 
-	public void setpRInitiator(String pRInitiator) {
-		this.pRInitiator = pRInitiator;
-	}
+    public String getRequestId() {
+        return requestId;
+    }
 
-	public int getpOAmount() {
-		return pOAmount;
-	}
+    public void setRequestId(final String requestId) {
+        this.requestId = requestId;
+    }
 
-	public void setpOAmount(int pOAmount) {
-		this.pOAmount = pOAmount;
-	}
+    public Date getpRDate() {
+        return pRDate;
+    }
 
-	public Date getPODate() {
-		return PODate;
-	}
+    public void setpRDate(final Date pRDate) {
+        this.pRDate = pRDate;
+    }
 
-	public void setPODate(Date pODate) {
-		PODate = pODate;
-	}
+    public String geteAMPRStatus() {
+        return eAMPRStatus;
+    }
 
-	public String geteAMPOStatus() {
-		return eAMPOStatus;
-	}
+    public void seteAMPRStatus(final String eAMPRStatus) {
+        this.eAMPRStatus = eAMPRStatus;
+    }
 
-	public void seteAMPOStatus(String eAMPOStatus) {
-		this.eAMPOStatus = eAMPOStatus;
-	}
+    public int getAmount() {
+        return amount;
+    }
 
-	public int getReservedAmount() {
-		return reservedAmount;
-	}
+    public void setAmount(final int amount) {
+        this.amount = amount;
+    }
 
-	public void setReservedAmount(int reservedAmount) {
-		this.reservedAmount = reservedAmount;
-	}
+    public String geteAMGnlDesc() {
+        return eAMGnlDesc;
+    }
 
-	public int getCommittedAmount() {
-		return committedAmount;
-	}
+    public void seteAMGnlDesc(final String eAMGnlDesc) {
+        this.eAMGnlDesc = eAMGnlDesc;
+    }
 
-	public void setCommittedAmount(int committedAmount) {
-		this.committedAmount = committedAmount;
-	}
+    public String geteAMDepartment() {
+        return eAMDepartment;
+    }
 
-	  
+    public void seteAMDepartment(final String eAMDepartment) {
+        this.eAMDepartment = eAMDepartment;
+    }
+
+    public String getpRInitiator() {
+        return pRInitiator;
+    }
+
+    public void setpRInitiator(final String pRInitiator) {
+        this.pRInitiator = pRInitiator;
+    }
+
+    public int getpOAmount() {
+        return pOAmount;
+    }
+
+    public void setpOAmount(final int pOAmount) {
+        this.pOAmount = pOAmount;
+    }
+
+    public Date getPODate() {
+        return PODate;
+    }
+
+    public void setPODate(final Date pODate) {
+        PODate = pODate;
+    }
+
+    public String geteAMPOStatus() {
+        return eAMPOStatus;
+    }
+
+    public void seteAMPOStatus(final String eAMPOStatus) {
+        this.eAMPOStatus = eAMPOStatus;
+    }
+
+    public int getReservedAmount() {
+        return reservedAmount;
+    }
+
+    public void setReservedAmount(final int reservedAmount) {
+        this.reservedAmount = reservedAmount;
+    }
+
+    public int getCommittedAmount() {
+        return committedAmount;
+    }
+
+    public void setCommittedAmount(final int committedAmount) {
+        this.committedAmount = committedAmount;
+    }
+
 }

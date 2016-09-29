@@ -1,31 +1,28 @@
 package com.anaplan.sbp.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.anaplan.sbp.dao.CalTrackerDao;
 import com.anaplan.sbp.model.CalTracker;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service("calTrackerService")
 public class CalTrackerServicesImpl implements CalTrackerServices {
 
-	@Autowired
-	CalTrackerDao calTrackerDao;
-	
-	@Override
-	public boolean addEntity(CalTracker calTracker) throws Exception {
-		return calTrackerDao.addCalTracker(calTracker);
-	}
+    @Autowired
+    private CalTrackerDao calTrackerDao;
 
-	@Override
-	public CalTracker getEntityById(long id) throws Exception {
-		return calTrackerDao.getCalTrackerById(id);
+    @Override
+    public boolean addEntity(final CalTracker calTracker) {
+        return calTrackerDao.addCalTracker(calTracker);
+    }
 
-	}
+    @Override
+    public CalTracker getEntityById(final long id) {
+        return calTrackerDao.getCalTrackerById(id);
+    }
 
-	@Override
-	public boolean updateCalTracker(CalTracker calTracker) throws Exception {
-		// TODO Auto-generated method stub
-		return calTrackerDao.updateCalTracker(calTracker);
-	}
+    @Override
+    public boolean updateCalTracker(final CalTracker calTracker) {
+        return calTrackerDao.updateCalTracker(calTracker);
+    }
 }
