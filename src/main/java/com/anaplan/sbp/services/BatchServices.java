@@ -1,10 +1,9 @@
 package com.anaplan.sbp.services;
 
 public interface BatchServices {
-	public void triggerBatch();
+    void triggerBatch();
 
-	public void fixedDelaySchedule();
+    void fixedDelaySchedule();
 
-	public void cronschedule();
-	
+    void cronschedule();
 }

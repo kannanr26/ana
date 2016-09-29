@@ -1,208 +1,205 @@
 package com.anaplan.sbp.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 @Table(name = "SYSTEM.CAL_TRACKER")
-public class CalTracker implements Serializable{
+public class CalTracker implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue
-	@Column(name = "REQ_ID")
-	private long Req_ID;
-	
-	@Column(name = "VERSION_ANAPLAN")
-	private String version_Anaplan;
-	
-	@Column(name = "SUB_DEPT")
-	private String sub_Dept;
-	
-	@Column(name = "ASSET_CLASS")
-	private String asset_Class;
-	
-	public long getReq_ID() {
-		return Req_ID;
-	}
+    @Id
+    @GeneratedValue
+    @Column(name = "REQ_ID")
+    private long reqId;
 
-	public void setReq_ID(long req_ID) {
-		Req_ID = req_ID;
-	}
+    @Column(name = "VERSION_ANAPLAN")
+    private String versionAnaplan;
 
-	public String getVersion_Anaplan() {
-		return version_Anaplan;
-	}
+    @Column(name = "SUB_DEPT")
+    private String subDept;
 
-	public void setVersion_Anaplan(String version_Anaplan) {
-		this.version_Anaplan = version_Anaplan;
-	}
+    @Column(name = "ASSET_CLASS")
+    private String assetClass;
 
-	public String getSub_Dept() {
-		return sub_Dept;
-	}
+    @Column(name = "ASSET_CATEGORY")
+    private String assetCategory;
 
-	public void setSub_Dept(String sub_Dept) {
-		this.sub_Dept = sub_Dept;
-	}
+    @Column(name = "NEW_REPLACE")
+    private String newReplace;
 
-	public String getAsset_Class() {
-		return asset_Class;
-	}
+    @Column(name = "QTY_ORDER")
+    private int qtyOrder;
 
-	public void setAsset_Class(String asset_Class) {
-		this.asset_Class = asset_Class;
-	}
+    @Column(name = "TOTAL_COMMITTED")
+    private int totalCommitted;
 
-	public String getAsset_Category() {
-		return asset_Category;
-	}
+    @Column(name = "TOTAL_RESERVED")
+    private int totalReserved;
 
-	public void setAsset_Category(String asset_Category) {
-		this.asset_Category = asset_Category;
-	}
+    @Column(name = "UNIT_PRICE")
+    private int unitPrice;
 
-	public String getNew_Replace() {
-		return new_Replace;
-	}
+    @Column(name = "YEAR_I")
+    private int yearI;
 
-	public void setNew_Replace(String new_Replace) {
-		this.new_Replace = new_Replace;
-	}
+    @Column(name = "BUDGETED_AMOUNT")
+    private int budgetedAmount;
 
-	public int getQty_Order() {
-		return qty_Order;
-	}
+    @Column(name = "CAPEX_TYPE")
+    private String capexType;
 
-	public void setQty_Order(int qty_Order) {
-		this.qty_Order = qty_Order;
-	}
+    @Column(name = "REALLOCAION_UNBUDGETED_STATUS")
+    private String reallocationUnbudgetedStatus;
 
-	public int getTotal_Committed() {
-		return total_Committed;
-	}
+    @Column(name = "UNBUDGETED_REQUEST")
+    private int unbudgetedRequest;
 
-	public void setTotal_Committed(int total_Committed) {
-		this.total_Committed = total_Committed;
-	}
+    @Column(name = "REALLOCATION_REQUEST")
+    private int reallocationRequest;
 
-	public int getTotal_Reserved() {
-		return total_Reserved;
-	}
+    @Column(name = "TOTAL")
+    private int total;
 
-	public void setTotal_Reserved(int total_Reserved) {
-		this.total_Reserved = total_Reserved;
-	}
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
-	public int getUnit_Price() {
-		return unit_Price;
-	}
+    public long getReqId() {
+        return reqId;
+    }
 
-	public void setUnit_Price(int unit_Price) {
-		this.unit_Price = unit_Price;
-	}
+    public void setReqId(final long reqId) {
+        this.reqId = reqId;
+    }
 
-	public int getYear_I() {
-		return year_I;
-	}
+    public String getVersionAnaplan() {
+        return versionAnaplan;
+    }
 
-	public void setYear_I(int year_I) {
-		this.year_I = year_I;
-	}
+    public void setVersionAnaplan(final String versionAnaplan) {
+        this.versionAnaplan = versionAnaplan;
+    }
 
-	public int getBudgeted_Amount() {
-		return budgeted_Amount;
-	}
+    public String getSubDept() {
+        return subDept;
+    }
 
-	public void setBudgeted_Amount(int budgeted_Amount) {
-		this.budgeted_Amount = budgeted_Amount;
-	}
+    public void setSubDept(final String subDept) {
+        this.subDept = subDept;
+    }
 
-	public String getCapex_Type() {
-		return capex_Type;
-	}
+    public String getAssetClass() {
+        return assetClass;
+    }
 
-	public void setCapex_Type(String capex_Type) {
-		this.capex_Type = capex_Type;
-	}
+    public void setAssetClass(final String assetClass) {
+        this.assetClass = assetClass;
+    }
 
-	public String getReallocation_Unbudgeted_Status() {
-		return reallocation_Unbudgeted_Status;
-	}
+    public String getAssetCategory() {
+        return assetCategory;
+    }
 
-	public void setReallocation_Unbudgeted_Status(String reallocation_Unbudgeted_Status) {
-		this.reallocation_Unbudgeted_Status = reallocation_Unbudgeted_Status;
-	}
+    public void setAssetCategory(final String assetCategory) {
+        this.assetCategory = assetCategory;
+    }
 
-	public int getUnbudgeted_Request() {
-		return unbudgeted_Request;
-	}
+    public String getNewReplace() {
+        return newReplace;
+    }
 
-	public void setUnbudgeted_Request(int unbudgeted_Request) {
-		this.unbudgeted_Request = unbudgeted_Request;
-	}
+    public void setNewReplace(final String newReplace) {
+        this.newReplace = newReplace;
+    }
 
-	public int getReallocation_Request() {
-		return reallocation_Request;
-	}
+    public int getQtyOrder() {
+        return qtyOrder;
+    }
 
-	public void setReallocation_Request(int reallocation_Request) {
-		this.reallocation_Request = reallocation_Request;
-	}
+    public void setQtyOrder(final int qtyOrder) {
+        this.qtyOrder = qtyOrder;
+    }
 
-	public int getTotal() {
-		return total;
-	}
+    public int getTotalCommitted() {
+        return totalCommitted;
+    }
 
-	public void setTotal(int total) {
-		this.total = total;
-	}
+    public void setTotalCommitted(final int totalCommitted) {
+        this.totalCommitted = totalCommitted;
+    }
 
-	@Column(name = "ASSET_CATEGORY")
-	private String asset_Category;
-	
-	
-	@Column(name = "NEW_REPLACE")
-	private String new_Replace;
-	
-	@Column(name = "QTY_ORDER")
-	private int qty_Order;
-	
-	@Column(name = "TOTAL_COMMITTED")
-	private int total_Committed;
-	
-	@Column(name = "TOTAL_RESERVED")
-	private int total_Reserved;
-	
-	
-	@Column(name = "UNIT_PRICE")
-	private int unit_Price;
-	
-	@Column(name = "YEAR_I")
-	private int year_I;
-	
-	@Column(name = "BUDGETED_AMOUNT")
-	private int budgeted_Amount;
-	  
-	@Column(name = "CAPEX_TYPE")
-		private String capex_Type;
-		
-		@Column(name = "REALLOCAION_UNBUDGETED_STATUS")
-		private String reallocation_Unbudgeted_Status;
-		
-		@Column(name ="UNBUDGETED_REQUEST")
-		private int unbudgeted_Request;
-		
-		@Column(name = "REALLOCATION_REQUEST")
-		private int reallocation_Request;
-		
-		@Column(name = "TOTAL")
-		private int total;
-	  
+    public int getTotalReserved() {
+        return totalReserved;
+    }
+
+    public void setTotalReserved(final int totalReserved) {
+        this.totalReserved = totalReserved;
+    }
+
+    public int getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(final int unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    public int getYearI() {
+        return yearI;
+    }
+
+    public void setYearI(final int yearI) {
+        this.yearI = yearI;
+    }
+
+    public int getBudgetedAmount() {
+        return budgetedAmount;
+    }
+
+    public void setBudgetedAmount(final int budgetedAmount) {
+        this.budgetedAmount = budgetedAmount;
+    }
+
+    public String getCapexType() {
+        return capexType;
+    }
+
+    public void setCapexType(final String capexType) {
+        this.capexType = capexType;
+    }
+
+    public String getReallocationUnbudgetedStatus() {
+        return reallocationUnbudgetedStatus;
+    }
+
+    public void setReallocationUnbudgetedStatus(final String reallocationUnbudgetedStatus) {
+        this.reallocationUnbudgetedStatus = reallocationUnbudgetedStatus;
+    }
+
+    public int getUnbudgetedRequest() {
+        return unbudgetedRequest;
+    }
+
+    public void setUnbudgetedRequest(final int unbudgetedRequest) {
+        this.unbudgetedRequest = unbudgetedRequest;
+    }
+
+    public int getReallocationRequest() {
+        return reallocationRequest;
+    }
+
+    public void setReallocationRequest(final int reallocationRequest) {
+        this.reallocationRequest = reallocationRequest;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(final int total) {
+        this.total = total;
+    }
+
 }
