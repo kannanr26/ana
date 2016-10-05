@@ -6,8 +6,11 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "SYSTEM.INP_PR_Details")
@@ -16,14 +19,20 @@ public class PRDetails implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "REQUEST_PR_ID")
 	private long requestPRId;
 	
 	@Column(name = "REQUEST_ID")
 	private String requestId;
 	
+	@Column(name = "PR_ID")
+	private String pRId;
+	
+	
 	@Column(name = "PR_DATE")
+	@DateTimeFormat(pattern="dd/MM/yyyy") 
+	
 	private Date pRDate;
 	
 	@Column(name = "EAM_PR_Status")
@@ -44,9 +53,9 @@ public class PRDetails implements Serializable{
 	@Column(name = "PO_AMOUNT")
 	private int pOAmount;
 	
-	
+	@DateTimeFormat(pattern="dd/MM/yyyy") 
 	@Column(name = "PO_Date")
-	private Date PODate;
+	private Date pODate;
 	
 	@Column(name = "EAM_PO_STATUS")
 	private String eAMPOStatus;
@@ -130,11 +139,11 @@ public class PRDetails implements Serializable{
 	}
 
 	public Date getPODate() {
-		return PODate;
+		return pODate;
 	}
 
 	public void setPODate(Date pODate) {
-		PODate = pODate;
+		this.pODate = pODate;
 	}
 
 	public String geteAMPOStatus() {

@@ -5,35 +5,84 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "SYSTEM.CAL_TRACKER")
-public class CalTracker implements Serializable{
+public class CalTracker implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "REQ_ID")
-	private long Req_ID;
-	
+
+	private long req_ID;
+
 	@Column(name = "VERSION_ANAPLAN")
+	@NotNull
 	private String version_Anaplan;
-	
+
 	@Column(name = "SUB_DEPT")
 	private String sub_Dept;
-	
+
 	@Column(name = "ASSET_CLASS")
 	private String asset_Class;
+
+	@Column(name = "ASSET_CATEGORY")
+	private String asset_Category;
+
+	@Column(name = "NEW_REPLACE")
+	private String new_Replace;
+
+	@Column(name="Request_Type")
+	private String request_Type;
 	
+	@Column(name = "QTY_ORDER")
+	private int qty_Order;
+
+	@Column(name = "TOTAL_COMMITTED")
+	private int total_Committed;
+	
+	@Column(name = "TOTAL_RESERVED")
+	private int total_Reserved;
+
+	@Column(name = "UNIT_PRICE")
+	private int unit_Price;
+
+	@Column(name = "YEAR_I")
+	private int year_I;
+
+	@Column(name = "BUDGETED_AMOUNT")
+	private int budgeted_Amount;
+
+	@Column(name = "CAPEX_TYPE")
+	private String capex_Type;
+
+	@Column(name = "REALLOCAION_UNBUDGETED_STATUS")
+	private String reallocation_Unbudgeted_Status;
+
+	@Column(name = "UNBUDGETED_REQUEST")
+	private int unbudgeted_Request;
+	
+	@Column(name = "NET_AVAILABLE_FUND")
+	private int net_Available_Fund;
+	
+	@Column(name = "REALLOCATION_REQUEST")
+	private int reallocation_Request;
+	@Column(name = "TOTAL")
+	private int total;
+
 	public long getReq_ID() {
-		return Req_ID;
+		return req_ID;
 	}
 
 	public void setReq_ID(long req_ID) {
-		Req_ID = req_ID;
+		this.req_ID = req_ID;
 	}
 
 	public String getVersion_Anaplan() {
@@ -163,46 +212,4 @@ public class CalTracker implements Serializable{
 	public void setTotal(int total) {
 		this.total = total;
 	}
-
-	@Column(name = "ASSET_CATEGORY")
-	private String asset_Category;
-	
-	
-	@Column(name = "NEW_REPLACE")
-	private String new_Replace;
-	
-	@Column(name = "QTY_ORDER")
-	private int qty_Order;
-	
-	@Column(name = "TOTAL_COMMITTED")
-	private int total_Committed;
-	
-	@Column(name = "TOTAL_RESERVED")
-	private int total_Reserved;
-	
-	
-	@Column(name = "UNIT_PRICE")
-	private int unit_Price;
-	
-	@Column(name = "YEAR_I")
-	private int year_I;
-	
-	@Column(name = "BUDGETED_AMOUNT")
-	private int budgeted_Amount;
-	  
-	@Column(name = "CAPEX_TYPE")
-		private String capex_Type;
-		
-		@Column(name = "REALLOCAION_UNBUDGETED_STATUS")
-		private String reallocation_Unbudgeted_Status;
-		
-		@Column(name ="UNBUDGETED_REQUEST")
-		private int unbudgeted_Request;
-		
-		@Column(name = "REALLOCATION_REQUEST")
-		private int reallocation_Request;
-		
-		@Column(name = "TOTAL")
-		private int total;
-	  
 }

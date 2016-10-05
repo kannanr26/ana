@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.anaplan.sbp.model.CalTracker;
 
-@Repository ("calTrackerDao")
+@Repository("calTrackerDao")
 public class CalTrackerDaoImpl implements CalTrackerDao {
 
 	@Autowired
